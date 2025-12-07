@@ -1,11 +1,8 @@
+from stats import num_of_words
+
 def get_book_text(book):
     with open(book) as f:
         return f.read()
-
-
-def num_of_words(text):
-    dum = text.split()
-    return dum
 
 
 
