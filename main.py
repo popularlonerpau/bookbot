@@ -1,15 +1,20 @@
 from stats import num_of_words
 from stats import num_of_characters
 from stats import sorted_list
+import sys
+
+if len(sys.argv) != 2:
+    print(f"Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+book_path = sys.argv[1]
+
 
 def get_book_text(book):
     with open(book) as f:
         return f.read()
 
-
-
 def main():
-    book = "books/frankenstein.txt"
+    book = book_path
     text = get_book_text(book)
     num = num_of_words(text)
     numchar = num_of_characters(text)
@@ -28,6 +33,5 @@ def main():
         print(f"{character}: {number}")
     print("============= END ===============")
 
+# Prints ['main.py']
 main()
- 
-   
